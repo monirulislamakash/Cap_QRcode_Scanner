@@ -8,7 +8,6 @@ django-heroku==0.3.1
 eval==0.0.5
 filelock==3.0.12
 gunicorn==20.1.0
-mysqlclient @ file:///D:/MISTHOSTEL%20PRO/misthostelpro/mysqlclient-1.4.6-cp38-cp38-win32.whl
 numpy==1.21.4
 opencv-python==4.5.4.60
 Pillow==8.3.1
