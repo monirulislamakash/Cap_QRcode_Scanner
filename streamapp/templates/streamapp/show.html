@@ -1,0 +1,23 @@
+
+{% extends 'streamapp/base.html' %}
+{% load static %}
+{% block head %}{% endblock  %}
+{% block title %}{% endblock  %}
+{% block body %}
+<div class="container col-lg-4" style="align-items: center;">
+    <table class="table">
+		  <tbody>
+		    <tr>
+		      <td>{{showtime.as_p}}</td>
+		    </tr>
+		    <tr>
+		      <td>{{show.as_p}}</td>
+		    </tr>
+		    <tr>
+		      <td colspan="2">{{showdate.as_p}}</td>
+		    </tr>
+			</tr>
+	</table>
+	<img src="{{prim}}" width="300" height="200" / >
+</div>
+{% endblock  %}

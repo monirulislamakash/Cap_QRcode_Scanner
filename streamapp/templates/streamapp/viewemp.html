@@ -1,0 +1,18 @@
+{% extends 'streamapp/base.html' %}
+{% load static %}
+{% block head %}{% endblock  %}
+{% block title %}{% endblock  %}
+{% block body %}
+{% for i in name %}
+    <div class="container col-lg-5 mt-3">
+        <p>Id :{{i.ids}}</p>
+        <hr>
+        <p>Name :{{i.name}}</p>
+        <hr>
+        <p>Mobile :{{i.mobile_no}}</p>
+        <hr>
+        <p><img src="http://127.0.0.1:8000/{{i.image}}" style="width:100%;height: 300px; border: solid 3px #999;"></p>
+    </diV>
+{% endfor %}
+    
+{% endblock  %}

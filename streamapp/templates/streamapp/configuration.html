@@ -1,0 +1,75 @@
+{% extends 'streamapp/base.html' %}
+{% block head %}{% endblock  %}
+{% block title %}{% endblock  %}
+{% block body %}
+  <div class="container">
+  	<div class="col-lg-6" style="display: inline-block; float: left;">
+	  	<form method="POST">
+	  		{% csrf_token %}
+	  		<div class="mb-3">
+			   	<select name="selector_known_or_gust" class="form-select" aria-label="Default select example" style="width: 50%; display: inline-block; float: left;">
+			  	<option value="known">Known</option>
+			  	<option value="gust">Gust</option>
+				</select>
+				<select name="selector_entry_exit" class="form-select" aria-label="Default select example" style="width: 50%; display: inline-block; float: right;">
+			  	<option value="entry">Entry</option>
+			  	<option value="exit">Exit</option>
+				</select>
+			</div>
+
+			<div class="">
+				From: <input type="date" name="from" value="" style="margin-right:20px; margin-top: 10px;"> To: <input value="4/11/2021" type="date" name="to">
+			</div>
+			<div class="">
+				<input type="text" class="form-control d-inline" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search" style="width: 80%;margin-top: 10px; margin-bottom: 10px;">
+				<button type="submit" class="btn btn-secondary d-inline">Search</button>
+			</div>
+		</form>
+		<div>
+			<img src="mal.jpg" style="width: 100%;height: 250px; border: solid 3px #666;">
+		</div>
+	</div>
+	<div class="col-lg-5" style="display: inline-block; float: right;">
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">ID</th>
+			      <th scope="col">Date</th>
+			      <th scope="col">Time</th>
+			      <th scope="col">View</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	{% if status %}
+			  	{% for i in status %}
+			    <tr>
+			      <th scope="row">{{i.ids}}</th>
+			      <td>{{i.data}}</td>
+			      <td>{{i.time}}</td>
+			      <td style="cursor: pointer;"><font size="5">
+					<a href="{% url 'show' i.id %}" class="edit"><ion-icon name="eye"></ion-icon></ion-icon></a>
+				  </font>
+				  </td>
+			    </tr>
+				{% endfor %}
+				{% endif %}
+				{% if status1 %}
+				{% for i in status1 %}
+			    <tr>
+			      <td>{{i.data}}</td>
+			      <td>{{i.time}}</td>
+			      <td style="cursor: pointer;"><font size="5">
+					<a href="{% url 'showun' i.id %}" class="edit"><ion-icon name="eye"></ion-icon></ion-icon></a>
+				  </font>
+				  </td>
+			    </tr>
+				{% endfor %}
+				{% endif %}
+			  </tbody>
+			</table>
+		</div>
+  </div>
+
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+{% endblock  %}

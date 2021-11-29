@@ -1,0 +1,35 @@
+{% extends 'streamapp/base.html' %}
+{% block head %}{% endblock  %}
+{% block title %}{% endblock  %}
+{% block body %}
+<div class="container col-lg-7">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Moblie</th>
+      <th scope="col">View</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    {% for i in emplist %}
+    <tr>
+      <td ">{{i.ids}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.mobile_no}}</td>
+      <td style="cursor: pointer;">
+          <font size="5">
+          <a href="{% url 'viewemp' i.ids %}" type="submit" class="edit"><ion-icon name="eye"></ion-icon></ion-icon></a>
+          </font>
+	  </td>
+    </tr>
+    </form>
+    {% endfor %}
+  </tbody>
+  
+</table>
+</div>
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+{% endblock  %}

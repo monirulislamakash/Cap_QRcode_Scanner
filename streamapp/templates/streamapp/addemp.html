@@ -1,0 +1,49 @@
+{% extends 'streamapp/base.html' %}
+{% block head %}{% endblock  %}
+{% block title %}{% endblock  %}
+{% block body %}
+      <div class="container">
+    	{% if sucess %}
+    	<div class="alert alert-success alert-dismissible fade show" role="alert">
+		  <strong>{{sucess}}!</strong>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		{% endif %}
+    {% if error %}
+    	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		  <strong>{{error}}!</strong>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		{% endif %}
+    <div class="d-flex justify-content-center">
+      
+    <form method="POST" accept="" class="col-lg-6" enctype="multipart/form-data">
+    {% csrf_token %}
+      <div class="mb-3 fcolor">
+        <label for="exampleInputEmail1" class="form-label">ID</label>
+        <input name="id" type="text" placeholder="Entar Your ID" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Please never share your name with anyone else.</div>
+      </div>
+      <div class="mb-3 fcolor">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input name="name" type="text" placeholder="Entar Your Password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Please never share your Password with anyone else.</div>
+      </div>
+      <div class="mb-3 fcolor">
+        <label for="exampleInputEmail1" class="form-label">Moblie</label>
+        <input name="mobile" type="text" placeholder="Entar Your Ip Adderss" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Please never share your ip address with anyone else.</div>
+      </div>
+      <div class="mb-3 fcolor">
+        <label for="exampleInputEmail1" class="form-label">Upload Image</label>
+        <input name="img" type="file" placeholder="Upload Image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Please never share your camera name with anyone else.</div>
+      </div>
+      <div class=" d-flex justify-content-center">
+      <button class="w-50 btn btn-lg btn-dark" type="submit">Add </button>
+  	  </div>
+    </form>
+  </div>
+</div>
+</div>
+{% endblock  %}
