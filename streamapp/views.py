@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http.response import StreamingHttpResponse
-from streamapp.camera import VideoCamera
 from .models import Cam_Configer,Empolys,Know,Unknow,CameraName,Cam_con
 import datetime
 import requests
